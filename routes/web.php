@@ -32,6 +32,9 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('users/{user}')->name('users.destroy')->uses('UsersController@destroy');
     Route::put('users/{user}/restore')->name('users.restore')->uses('UsersController@restore');
 
+    // Customers
+    Route::get('customers')->name('customers')->uses('CustomersController@index');
+
     Route::get('/example', function () {
         return Inertia::render('Example/Index');
     })->name('example');
