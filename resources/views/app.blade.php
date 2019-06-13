@@ -8,7 +8,7 @@
     <script src="{{ mix('/js/app.js') }}" defer></script>
     @routes
 </head>
-<body class="font-sans leading-none text-gray-800 antialiased">
+<body class="relative font-sans leading-none text-gray-800 antialiased">
 
 @inertia
 

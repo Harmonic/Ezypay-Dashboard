@@ -10,7 +10,7 @@ module.exports = {
 			colors: {
 				primary: colors.indigo,
 				secondary: colors.orange,
-				// ...
+				'bg-semi-75': 'rgba(0, 0, 0, 0.75)'
 			  }
 		}
 	}

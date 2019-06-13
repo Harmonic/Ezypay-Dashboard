@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Customers
     Route::get('customers')->name('customers')->uses('CustomersController@index');
+    Route::get('customers/{customer}')->name('customers.show')->uses('CustomersController@show');
 
     Route::get('/example', function () {
         return Inertia::render('Example/Index');

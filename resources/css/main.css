@@ -4,6 +4,7 @@
 @import "buttons";
 @import "form";
 @import "nprogress";
+@import "modal";
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
