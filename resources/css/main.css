@@ -8,3 +8,7 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.sub-header {
+	@apply mt-4 mb-2 uppercase font-bold text-primary-700 text-sm;
+}

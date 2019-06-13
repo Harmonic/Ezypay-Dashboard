@@ -10,7 +10,7 @@
           <th class="px-6 pt-6 pb-4 cursor-pointer" @click="orderBy('email')">Email</th>
           <!-- <th class="px-6 pt-6 pb-4" colspan="2">Role</th> -->
         </tr>
-        <tr v-for="customer in customers" :key="customer.id" @click="show(customer)" class="hover:bg-grey-lightest focus-within:bg-grey-lightest">
+        <tr v-for="customer in customers" :key="customer.id" @click="show(customer)" class="hover:bg-grey-lightest focus-within:bg-grey-lightest cursor-pointer">
           <td class="border-t px-6 py-4 flex items-center">
             {{ customer.companyName }}
           </td>
@@ -41,8 +41,8 @@
 		  {{ customer.companyName }}
 		</h1>
 		<p class="text-sm text-gray-600 flex">{{ customer.id }}</p>
-		<div class="mt-4 uppercase font-bold text-primary-700 text-sm">Account Contact</div>
-		<div class="flex mb-2 mt-2">
+		<div class="sub-header">Account Contact</div>
+		<div class="flex mb-2">
 			<div class="w-2/3 h-12">
 				<div class="font-bold text-gray-800 text-xl">{{ customer.firstName }} {{ customer.lastName }}</div>
 				<div class="mt-1 text-gray-600"><a :href="`mailto:${customer.email}`">{{ customer.email }}</a></div>
@@ -55,6 +55,15 @@
 					<icon name="mobile" class="w-4 h-4 mr-2 text-gray-400 fill-current" />{{ customer.mobilePhone }}
 				</div>
 			</div>
+		</div>
+		<div class="sub-header">Address</div>
+		<div>
+			{{ customer.address.address1 }}
+			{{ customer.address.address2 }}
+			{{ customer.address.city }}
+			{{ customer.address.state }}
+			{{ customer.address.postalCode }}
+			{{ customer.address.countryCode }}
 		</div>
     </modal>
     
