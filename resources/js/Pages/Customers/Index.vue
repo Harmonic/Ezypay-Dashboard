@@ -37,7 +37,25 @@
     </div>
 
     <modal v-if="customer !== null" :showing="showModal" @close="showModal = false">
-      THIS WILL CONTAIN CUSTOMER INFORMATION: {{ customer.companyName }}
+      	<h1 class="text-gray-900 font-bold text-xl mb-2">
+		  {{ customer.companyName }}
+		</h1>
+		<p class="text-sm text-gray-600 flex">{{ customer.id }}</p>
+		<div class="mt-4 uppercase font-bold text-primary-700 text-sm">Account Contact</div>
+		<div class="flex mb-2 mt-2">
+			<div class="w-2/3 h-12">
+				<div class="font-bold text-gray-800 text-xl">{{ customer.firstName }} {{ customer.lastName }}</div>
+				<div class="mt-1 text-gray-600"><a :href="`mailto:${customer.email}`">{{ customer.email }}</a></div>
+			</div>
+			<div class="w-1/3 h-12">
+				<div v-if="customer.homePhone" class="flex">
+					<icon name="phone" class="w-4 h-4 mr-2 text-gray-400 fill-current" />{{ customer.homePhone }}
+				</div>
+				<div v-if="customer.mobilePhone" class="flex mt-2">
+					<icon name="mobile" class="w-4 h-4 mr-2 text-gray-400 fill-current" />{{ customer.mobilePhone }}
+				</div>
+			</div>
+		</div>
     </modal>
     
   </layout>
