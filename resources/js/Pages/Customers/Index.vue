@@ -1,14 +1,12 @@
 <template>
   <layout title="Customers">
     <h1 class="mb-8 font-bold text-3xl">Customers</h1>
-    <div>{{ customers }}</div>
 
     <div class="bg-white rounded shadow overflow-x-auto">
       <table class="w-full whitespace-no-wrap">
         <tr class="text-left font-bold">
           <th class="px-6 pt-6 pb-4 cursor-pointer" @click="orderBy('name')">Name</th>
           <th class="px-6 pt-6 pb-4 cursor-pointer" @click="orderBy('email')">Email</th>
-          <!-- <th class="px-6 pt-6 pb-4" colspan="2">Role</th> -->
         </tr>
         <tr v-for="customer in customers" :key="customer.id" @click="show(customer)" class="hover:bg-grey-lightest focus-within:bg-grey-lightest cursor-pointer">
           <td class="border-t px-6 py-4 flex items-center">
@@ -53,12 +51,19 @@
 		</div>
 		<div class="sub-header">Address</div>
 		<div>
-			{{ customer.address.address1 }}
-			{{ customer.address.address2 }}
-			{{ customer.address.city }}
-			{{ customer.address.state }}
+			{{ customer.address.address1 }}<br />
+			{{ customer.address.address2 }}<br />
+			{{ customer.address.city }}<br />
+			{{ customer.address.state }}<br />
 			{{ customer.address.postalCode }}
 			{{ customer.address.countryCode }}
+		</div>
+		<div class="sub-header">Meta Data</div>
+		<div class="mb-2" v-for="(value, key) in customer.metadata" v-bind:key="key">
+			{{ sentanceCase(key) }}: {{ value }}
+		</div>
+		<div class="mt-4 text-xs text-gray-400">
+			Created {{ customer.createdOn | date }}
 		</div>
     </modal>
     
@@ -66,14 +71,13 @@
 </template>
 
 <script>
-import _ from 'lodash'
 import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
 import Modal from '@/Shared/Modal'
 
 export default {
   components: {
-    Icon,
+	Icon,
     Layout,
     Modal
   },
@@ -93,8 +97,11 @@ export default {
     show: function(customer) {
       this.customer = customer;
       this.showModal = true;
-    }
-
+    },
+	sentanceCase: function(text) {
+		const result = text.replace(/([A-Z]+)/g, " $1").replace(/([A-Z][a-z])/g, " $1");
+		return result.charAt(0).toUpperCase() + result.slice(1);
+	}
   },
 }
 </script>

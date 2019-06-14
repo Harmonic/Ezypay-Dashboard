@@ -10,6 +10,9 @@ Vue.use(PortalVue)
 
 let app = document.getElementById('app')
 
+import DateFilter from './Filters/date'
+Vue.filter('date', DateFilter )
+
 new Vue({
   render: h => h(Inertia, {
     props: {

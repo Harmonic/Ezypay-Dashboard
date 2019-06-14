@@ -102,7 +102,6 @@ export default {
     },
     orderBy(column) {
       var direction = 'asc';
-      console.log(column);
       if (this.form.orderColumn == column) {
         if (this.form.orderDirection == 'asc') {
           direction = 'desc';
