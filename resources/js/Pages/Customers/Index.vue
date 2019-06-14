@@ -19,11 +19,6 @@
               {{ customer.email }}
             </inertia-link>
           </td>
-          <!-- <td class="border-t">
-            <inertia-link class="px-6 py-4 flex items-center" :href="route('customers.show', customer.id)" tabindex="-1">
-              {{ customer.owner ? 'Owner' : 'customer' }}
-            </inertia-link>
-          </td> -->
           <td class="border-t w-px">
             <inertia-link class="px-4 flex items-center" :href="route('customers.show', customer.id)" tabindex="-1">
               <icon name="cheveron-right" class="block w-6 h-6 fill-grey" />

@@ -22,4 +22,4 @@ mix.postCss('resources/css/main.css', 'public/css', [
   .purgeCss()
   .version()
   .sourceMaps()
-  .browserSync('laravel-preset-test.test')
+  .browserSync('ezypay-dashboard.test')
