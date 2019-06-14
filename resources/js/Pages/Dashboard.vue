@@ -1,7 +1,7 @@
 <template>
   <layout title="Dashboard">
     <h1 class="mb-8 font-bold text-3xl">Welcome</h1>
-    <p class="mb-12 leading-normal">Welcome to the harmonic Laravel preset!</p>
+    <p class="mb-12 leading-normal">Welcome to the Ezypay Dashboard!</p>
   </layout>
 </template>
 
