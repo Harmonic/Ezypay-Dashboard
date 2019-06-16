@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use App\Traits\InertiaTable;
+use harmonic\InertiaTable\InertiaModel;
 
-class User extends Model implements AuthenticatableContract, AuthorizableContract {
-    use SoftDeletes, Authenticatable, Authorizable, InertiaTable;
+class User extends InertiaModel implements AuthenticatableContract, AuthorizableContract {
+    use SoftDeletes, Authenticatable, Authorizable;
+
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.

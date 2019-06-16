@@ -2,31 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use harmonic\InertiaTable\Facades\InertiaTable;
 use Inertia\Inertia;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class UsersController extends Controller {
     public function index() {
-        return Inertia::render('Users/Index', [
-            'filters' => Request::all('search', 'trashed'),
-            'order' => Request::all('orderColumn', 'orderDirection'),
-            'users' => Auth::user()
-                ->order(Request::input('orderColumn') ?? 'name', Request::input('orderDirection'))
-                ->filter(Request::only('search', 'trashed'), ['name', 'email'])
-                ->get()
-                ->transform(function ($user) {
-                    return [
-                        'id' => $user->id,
-                        'name' => $user->name,
-                        'email' => $user->email,
-                        'deleted_at' => $user->deleted_at,
-                    ];
-                }),
-        ]);
+        $user = new User();
+        return InertiaTable::index($user, ['id', 'name', 'email', 'deleted_at']);
     }
 
     public function create() {

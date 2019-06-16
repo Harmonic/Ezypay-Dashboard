@@ -15,6 +15,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/harmonic/inertia-table"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/craigharman/laravel-make-user"
         }
     ],
@@ -28,7 +32,8 @@
         "reinink/remember-query-strings": "^0.1.0",
         "silber/bouncer": "v1.0.0-rc.5",
         "tightenco/ziggy": "^0.7.1",
-        "harmonic/ezypay": "dev-master"
+        "harmonic/ezypay": "dev-master",
+        "harmonic/inertia-table": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
