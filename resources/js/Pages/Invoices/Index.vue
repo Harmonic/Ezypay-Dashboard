@@ -2,8 +2,6 @@
   <layout title="Invoices">
     <h1 class="mb-8 font-bold text-3xl">Invoices</h1>
 
-	<div>{{ invoices }}</div>
-
     <div class="bg-white rounded shadow overflow-x-auto">
       <table class="w-full whitespace-no-wrap">
         <tr class="text-left font-bold">
@@ -42,6 +40,14 @@
       <div class="sub-header">{{ invoice.status }}</div>
       <h2 class="font-bold">Total: ${{ invoice.amount.value }}</h2>
       <h3 class="mt-2">{{ invoice.subscriptionName }}</h3>
+      <p class="text-gray-400 text-xs mt-2 cursor-pointer" @click="toggleJSON">View JSON <span v-html="jsonToggleIcon"></span></p>
+      <div class="mt-2 bg-gray-100 p-3" v-if="showJSON">
+        <vue-json-pretty
+          :path="'res'"
+          :data="invoice"
+          :deep="2">
+        </vue-json-pretty>
+      </div>
     </modal>
     
   </layout>
@@ -51,12 +57,14 @@
 import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
 import Modal from '@/Shared/Modal'
+import VueJsonPretty from 'vue-json-pretty'
 
 export default {
   components: {
 	Icon,
     Layout,
-    Modal
+    Modal,
+    VueJsonPretty
   },
   props: {
     invoices: Array
@@ -64,7 +72,9 @@ export default {
   data() {
     return {
       showModal: false,
-      invoice: null
+      invoice: null,
+      jsonToggleIcon: "&#9650;",
+      showJSON: false
     }
   },
   watch: {
@@ -74,6 +84,15 @@ export default {
     show: function(invoice) {
       this.invoice = invoice;
       this.showModal = true;
+    },
+    toggleJSON: function() {
+      if (this.showJSON) {
+        this.jsonToggleIcon = "&#9660;"; // Up arrow
+        this.showJSON = false;
+      } else {
+        this.jsonToggleIcon = "&#9660;"; // Down arrow
+        this.showJSON = true;
+      }
     }
   },
 }
