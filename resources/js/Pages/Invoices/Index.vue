@@ -87,7 +87,7 @@ export default {
     },
     toggleJSON: function() {
       if (this.showJSON) {
-        this.jsonToggleIcon = "&#9660;"; // Up arrow
+        this.jsonToggleIcon = "&#9650;"; // Up arrow
         this.showJSON = false;
       } else {
         this.jsonToggleIcon = "&#9660;"; // Down arrow
