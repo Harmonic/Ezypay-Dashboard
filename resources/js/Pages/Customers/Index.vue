@@ -2,7 +2,15 @@
   <layout title="Customers">
     <h1 class="mb-8 font-bold text-3xl">Customers</h1>
 
-    <inertia-table :data="customers" id="id" :columns="columns" :columnDefs="columnDefs" @item-selected="show"></inertia-table>
+    <inertia-table 
+      :data="customers" 
+      id="id" 
+      :columns="columns" 
+      :columnDefs="columnDefs" 
+      @item-selected="show"
+      routeName="customers"
+      >
+    </inertia-table>
 
     <modal v-if="customer !== null" :showing="showModal" @close="showModal = false">
       	<h1 class="text-gray-900 font-bold text-xl mb-2">
