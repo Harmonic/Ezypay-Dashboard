@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller {
     public function index() {
-        Ezypay::fake();
+        //Ezypay::fake();
         $customers = Ezypay::getCustomers(false, null, null, null, null, null, null, null, null, 25, 0);
         //dd($customers);
         return Inertia::render('Customers/Index', ['customers' => $customers]);
