@@ -8,10 +8,9 @@
 </template>
 
 <script>
-import _ from 'lodash'
 import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
-import InertiaTable from '@/Shared/InertiaTable'
+import InertiaTable from 'inertia-table'
 
 export default {
   components: {

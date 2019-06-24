@@ -57,7 +57,7 @@
 import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
 import Modal from '@/Shared/Modal'
-import InertiaTable from '@/Shared/InertiaTable'
+import InertiaTable from 'inertia-table'
 
 export default {
   components: {

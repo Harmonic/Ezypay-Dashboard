@@ -4,6 +4,7 @@ Vue.mixin({ methods: { route: (...args) => window.route(...args).url() } })
 
 import Inertia from 'inertia-vue'
 import PortalVue from 'portal-vue'
+import 'inertia-table'
 import Vue from 'vue'
 Vue.use(Inertia)
 Vue.use(PortalVue)

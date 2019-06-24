@@ -29,8 +29,8 @@
 import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
 import Modal from '@/Shared/Modal'
+import InertiaTable from 'inertia-table'
 import VueJsonPretty from 'vue-json-pretty'
-import InertiaTable from '@/Shared/InertiaTable'
 
 export default {
   components: {
