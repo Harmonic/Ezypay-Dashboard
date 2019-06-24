@@ -30,6 +30,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "pluralize": "^8.0.0",
         "vue-json-pretty": "^1.6.0"
     }
 }

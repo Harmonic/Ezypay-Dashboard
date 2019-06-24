@@ -15,9 +15,9 @@
 				<option value="only">Only Trashed</option>
 				</select>
 			</search-filter>
-			<inertia-link class="btn-primary" :href="route('users.create')">
+			<inertia-link v-if="createLink" class="btn-primary" :href="route(createLink)">
 				<span>Create</span>
-				<span class="hidden md:inline">User</span>
+				<span class="hidden md:inline">{{ entityName }}</span>
 			</inertia-link>
 		</div>
 		<div class="bg-white rounded shadow overflow-x-auto">
@@ -47,6 +47,7 @@
 import _ from 'lodash'
 import Icon from '@/Shared/Icon'
 import SearchFilter from '@/Shared/SearchFilter'
+import Pluralize from 'pluralize';
 
 export default {
   components: {
@@ -75,12 +76,17 @@ export default {
 		type: String,
 		default: 'id'
 	},
-	routeName: String
+	routeName: String,
+	createLink: {
+		type: String,
+		default: null
+	}
   },
   data() {
     return {
 	  item: null,
 	  form: null,
+	  entityName: ''
     }
   },
   watch: {
@@ -112,6 +118,7 @@ export default {
 	  if (this.filters !== null || this.order !== null) {
 		  this.createFormData();
 	  }
+	  this.entityName = Pluralize.singular(this.routeName);
   },
   methods: {
 	columnData: function(item, column) {

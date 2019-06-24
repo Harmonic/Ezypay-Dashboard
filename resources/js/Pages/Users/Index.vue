@@ -2,7 +2,7 @@
   <layout title="Users">
     <h1 class="mb-8 font-bold text-3xl">Users</h1>
     
-    <inertia-table :data="users" id="id" :order="order" :filters="filters" :columns="columns" @item-selected="show"></inertia-table>
+    <inertia-table :data="users" id="id" :order="order" :filters="filters" :columns="columns" routeName="users" createLink="users.create" @item-selected="show"></inertia-table>
     
   </layout>
 </template>
@@ -29,12 +29,9 @@ export default {
       columns: ["name", "email"],
     }
   },
-  watch: {
-    
-  },
   methods: {
-    show() {
-      //TODO: Call inertia link somehow: https://github.com/inertiajs/inertia-vue/blob/master/src/link.js
+    show(user) {
+      this.$inertia.replace(this.route('users.edit', user.id));
     }
   },
 }
