@@ -40,6 +40,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('invoices')->name('invoices')->uses('InvoicesController@index');
     Route::get('invoices/{invoice}')->name('invoices.show')->uses('InvoicesController@show');
 
+    // Subscriptions
+    Route::inertia('subscriptions');
+
     Route::get('/example', function () {
         return Inertia::render('Example/Index');
     })->name('example');
