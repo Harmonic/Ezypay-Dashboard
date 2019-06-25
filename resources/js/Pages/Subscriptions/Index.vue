@@ -53,11 +53,8 @@ export default {
       subscription: null,
       jsonToggleIcon: "&#9650;",
       showJSON: false,
-      columns: ["ID", "status", "value", "subscriptionName"],
+      columns: ["id", "status", "value", "subscriptionName"],
       columnDefs: [ {
-          "ID": (item) => {
-            return item.documentNumber;
-          },
           "value": (item) => {
             return "$" + item.amount.value;
           }

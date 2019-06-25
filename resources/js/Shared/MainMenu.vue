@@ -26,7 +26,7 @@
     </div>
     <div class="mb-4">
       <inertia-link class="flex items-center group py-3" :href="route('subscriptions')">
-        <icon name="dollar" class="w-4 h-4 mr-2" :class="isUrl('subscriptions') ? 'text-white fill-current' : 'text-primary-400 fill-current group-hover:text-white fill-current'" />
+        <icon name="watch" class="w-4 h-4 mr-2" :class="isUrl('subscriptions') ? 'text-white fill-current' : 'text-primary-400 fill-current group-hover:text-white fill-current'" />
         <div :class="isUrl('subscriptions') ? 'text-white' : 'text-primary-400 group-hover:text-white'">Subscriptions</div>
       </inertia-link>
     </div>
