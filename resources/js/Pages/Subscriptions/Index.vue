@@ -4,7 +4,7 @@
 
 	{{ subscriptions }}
 
-    <inertia-table :data="subscriptions" id="id" :columns="columns" :columnDefs="columnDefs" @item-selected="show"></inertia-table>
+    <inertia-table :data="subscriptions" id="id" :columns="columns" :order="order" :filters="filters" :columnDefs="columnDefs" @item-selected="show"></inertia-table>
 
     <modal v-if="subscription !== null" :showing="showModal" @close="showModal = false">
       <h1 class="text-gray-900 font-bold text-xl mb-2">
@@ -43,7 +43,9 @@ export default {
     InertiaTable
   },
   props: {
-    subscriptions: Array
+    subscriptions: Array,
+    filters: Object,
+    order: Object,
   },
   data() {
     return {
