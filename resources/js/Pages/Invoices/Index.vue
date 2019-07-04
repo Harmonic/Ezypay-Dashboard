@@ -4,7 +4,7 @@
 
     <inertia-table :data="invoices" id="id" :columns="columns" :columnDefs="columnDefs" @item-selected="show"></inertia-table>
 
-    <modal v-if="invoice !== null" :showing="showModal" @close="showModal = false">
+    <vue-tailwind-modal v-if="invoice !== null" :showing="showModal" @close="showModal = false">
       <h1 class="text-gray-900 font-bold text-xl mb-2">
         {{ invoice.documentNumber }}
       </h1>
@@ -20,7 +20,7 @@
           :deep="2">
         </vue-json-pretty>
       </div>
-    </modal>
+    </vue-tailwind-modal>
     
   </layout>
 </template>
@@ -28,7 +28,7 @@
 <script>
 import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
-import Modal from '@/Shared/Modal'
+import VueTailwindModal from 'vue-tailwind-modal'
 import InertiaTable from 'inertia-table'
 import VueJsonPretty from 'vue-json-pretty'
 
@@ -36,7 +36,7 @@ export default {
   components: {
 	Icon,
     Layout,
-    Modal,
+    VueTailwindModal,
     VueJsonPretty,
     InertiaTable
   },

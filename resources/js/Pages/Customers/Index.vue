@@ -12,7 +12,7 @@
       >
     </inertia-table>
 
-    <modal v-if="customer !== null" :showing="showModal" @close="showModal = false">
+    <vue-tailwind-modal v-if="customer !== null" :showing="showModal" @close="showModal = false">
       	<h1 class="text-gray-900 font-bold text-xl mb-2">
 		  {{ customer.companyName }}
 		</h1>
@@ -48,7 +48,7 @@
 		<div class="mt-4 text-xs text-gray-400">
 			Created {{ customer.createdOn | date }}
 		</div>
-    </modal>
+    </vue-tailwind-modal>
     
   </layout>
 </template>
@@ -56,14 +56,14 @@
 <script>
 import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
-import Modal from '@/Shared/Modal'
 import InertiaTable from 'inertia-table'
+import VueTailwindModal from 'vue-tailwind-modal'
 
 export default {
   components: {
 	  Icon,
     Layout,
-    Modal,
+    VueTailwindModal,
     InertiaTable
   },
   props: {
@@ -73,11 +73,16 @@ export default {
     return {
       showModal: false,
       customer: null,
-      columns: ["name", "email"],
+      columns: ["name", "email", "subscription"],
       columnDefs: [ {
           "name": (item) => {
             //return item.firstName + ' ' + item.lastName
             return item.companyName;
+          }
+        },
+        {
+          "subscription": (item) => {
+            return '<a href="/subscriptions?search='+item.id+'">Subscription</a>';
           }
         }
       ]
