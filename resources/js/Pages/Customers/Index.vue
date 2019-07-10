@@ -6,10 +6,13 @@
       :data="customers" 
       id="id" 
       :columns="columns" 
-      :columnDefs="columnDefs" 
       @item-selected="show"
       routeName="customers"
       >
+      <template slot-scope="{ item }" slot="name">
+        {{ item.companyName }}
+      </template>
+      <a slot-scope="{ item }" slot="subscription" :href="`/subscriptions?search=${item.id}`" class="underline" v-on:click.stop="">View</a>
     </inertia-table>
 
     <vue-tailwind-modal v-if="customer !== null" :showing="showModal" @close="showModal = false">
@@ -73,19 +76,7 @@ export default {
     return {
       showModal: false,
       customer: null,
-      columns: ["name", "email", "subscription"],
-      columnDefs: [ {
-          "name": (item) => {
-            //return item.firstName + ' ' + item.lastName
-            return item.companyName;
-          }
-        },
-        {
-          "subscription": (item) => {
-            return '<a href="/subscriptions?search='+item.id+'">Subscription</a>';
-          }
-        }
-      ]
+      columns: ["name", "email", "subscription"]
     }
   },
   watch: {

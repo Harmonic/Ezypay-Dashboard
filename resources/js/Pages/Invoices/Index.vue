@@ -2,7 +2,14 @@
   <layout title="Invoices">
     <h1 class="mb-8 font-bold text-3xl">Invoices</h1>
 
-    <inertia-table :data="invoices" id="id" :columns="columns" :columnDefs="columnDefs" @item-selected="show"></inertia-table>
+    <inertia-table :data="invoices" id="id" :columns="columns" @item-selected="show">
+      <span slot-scope="{ item }" slot="ID">
+        {{ item.documentNumber }}
+      </span>
+      <span slot-scope="{ item }" slot="value">
+        ${{ item.amount.value }}
+      </span>
+    </inertia-table>
 
     <vue-tailwind-modal v-if="invoice !== null" :showing="showModal" @close="showModal = false">
       <h1 class="text-gray-900 font-bold text-xl mb-2">
@@ -49,16 +56,7 @@ export default {
       invoice: null,
       jsonToggleIcon: "&#9650;",
       showJSON: false,
-      columns: ["ID", "status", "value", "subscriptionName"],
-      columnDefs: [ {
-          "ID": (item) => {
-            return item.documentNumber;
-          },
-          "value": (item) => {
-            return "$" + item.amount.value;
-          }
-        }
-      ]
+      columns: ["ID", "status", "value", "subscriptionName"]
     }
   },
   watch: {
