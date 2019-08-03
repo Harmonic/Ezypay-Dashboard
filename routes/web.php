@@ -43,6 +43,10 @@ Route::middleware(['auth'])->group(function () {
     // Subscriptions
     Route::inertia('subscriptions');
 
+    // Future Invoices
+    Route::get('futureInvoices/{subscription}/{customer}')->name('futureInvoices')->uses('FutureInvoicesController@index');
+    //Route::get('futureInvoices/{subscriptionId}/{customer}')->name('futureInvoices.show')->uses('FutureInvoicesController@show');
+
     Route::get('/example', function () {
         return Inertia::render('Example/Index');
     })->name('example');

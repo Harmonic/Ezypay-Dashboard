@@ -629,12 +629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Harmonic/Ezypay.git",
-                "reference": "34474ebed12fdd8039867b2c23fa12b85d9bc375"
+                "reference": "961110d7000ab64746b90559ef0a0ffab9718bfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Harmonic/Ezypay/zipball/34474ebed12fdd8039867b2c23fa12b85d9bc375",
-                "reference": "34474ebed12fdd8039867b2c23fa12b85d9bc375",
+                "url": "https://api.github.com/repos/Harmonic/Ezypay/zipball/961110d7000ab64746b90559ef0a0ffab9718bfc",
+                "reference": "961110d7000ab64746b90559ef0a0ffab9718bfc",
                 "shasum": ""
             },
             "require": {
@@ -679,17 +679,17 @@
                     "homepage": "https://harmonic.com.au"
                 }
             ],
-            "description": ":description",
+            "description": "A PHP SDK for the Ezypay v2.0 API",
             "homepage": "https://github.com/harmonic/ezypay",
             "keywords": [
                 "Ezypay",
                 "Laravel"
             ],
             "support": {
-                "source": "https://github.com/Harmonic/Ezypay/tree/master",
+                "source": "https://github.com/Harmonic/Ezypay/tree/v1.0.6",
                 "issues": "https://github.com/Harmonic/Ezypay/issues"
             },
-            "time": "2019-06-21T03:00:42+00:00"
+            "time": "2019-07-17T05:03:52+00:00"
         },
         {
             "name": "harmonic/inertia-table",

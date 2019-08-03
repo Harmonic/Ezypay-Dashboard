@@ -1,26 +1,31 @@
 <template>
-  <layout title="Subscriptions">
-    <h1 class="mb-8 font-bold text-3xl">Subscriptions</h1>
+  <layout title="Invoices">
+    <h1 class="mb-8 font-bold text-3xl">Future Invoices</h1>
 
-	{{ subscriptions }}
+    {{ invoices }}
 
-    <inertia-table :data="subscriptions" id="id" :columns="columns" :order="order" :filters="filters" :columnDefs="columnDefs" @item-selected="show">
-      <a slot-scope="{ item }" slot="futureInvoices" :href="`/futureInvoices/${item.id}/${item.customerId}`" class="underline" v-on:click.stop="">View</a>
+    <inertia-table :data="invoices" id="id" :columns="columns" @item-selected="show">
+      <span slot-scope="{ item }" slot="ID">
+        {{ item.documentNumber }}
+      </span>
+      <span slot-scope="{ item }" slot="value">
+        ${{ item.amount.value }}
+      </span>
     </inertia-table>
 
-    <vue-tailwind-modal v-if="subscription !== null" :showing="showModal" @close="showModal = false">
+    <vue-tailwind-modal v-if="invoice !== null" :showing="showModal" @close="showModal = false">
       <h1 class="text-gray-900 font-bold text-xl mb-2">
-        {{ subscription.documentNumber }}
+        {{ invoice.documentNumber }}
       </h1>
-      Created: {{ subscription.date }} Due: {{ subscription.dueDate }}
-      <div class="sub-header">{{ subscription.status }}</div>
-      <h2 class="font-bold">Total: ${{ subscription.amount.value }}</h2>
-      <h3 class="mt-2">{{ subscription.subscriptionName }}</h3>
+      Created: {{ invoice.date }} Due: {{ invoice.dueDate }}
+      <div class="sub-header">{{ invoice.status }}</div>
+      <h2 class="font-bold">Total: ${{ invoice.amount.value }}</h2>
+      <h3 class="mt-2">{{ invoice.subscriptionName }}</h3>
       <p class="text-gray-400 text-xs mt-2 cursor-pointer" @click="toggleJSON">View JSON <span v-html="jsonToggleIcon"></span></p>
       <div class="mt-2 bg-gray-100 p-3" v-if="showJSON">
         <vue-json-pretty
           :path="'res'"
-          :data="subscription"
+          :data="invoice"
           :deep="2">
         </vue-json-pretty>
       </div>
@@ -45,31 +50,23 @@ export default {
     InertiaTable
   },
   props: {
-    subscriptions: Array,
-    filters: Object,
-    order: Object,
+    invoices: Array
   },
   data() {
     return {
       showModal: false,
-      subscription: null,
+      invoice: null,
       jsonToggleIcon: "&#9650;",
       showJSON: false,
-      columns: ["id", "status", "value", "subscriptionName", "futureInvoices"],
-      columnDefs: [ {
-          "value": (item) => {
-            return "$" + item.amount.value;
-          }
-        }
-      ]
+      columns: ["ID", "status", "value", "subscriptionName"]
     }
   },
   watch: {
     
   },
   methods: {
-    show: function(subscription) {
-      this.subscription = subscription;
+    show: function(invoice) {
+      this.invoice = invoice;
       this.showModal = true;
     },
     toggleJSON: function() {
