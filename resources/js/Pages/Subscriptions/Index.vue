@@ -55,7 +55,7 @@ export default {
       subscription: null,
       jsonToggleIcon: "&#9650;",
       showJSON: false,
-      columns: ["id", "status", "value", "subscriptionName", "futureInvoices"],
+      columns: ["id", "status", "value", "name", "futureInvoices"],
       columnDefs: [ {
           "value": (item) => {
             return "$" + item.amount.value;

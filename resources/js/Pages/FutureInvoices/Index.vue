@@ -2,12 +2,7 @@
   <layout title="Invoices">
     <h1 class="mb-8 font-bold text-3xl">Future Invoices</h1>
 
-    {{ invoices }}
-
     <inertia-table :data="invoices" id="id" :columns="columns" @item-selected="show">
-      <span slot-scope="{ item }" slot="ID">
-        {{ item.documentNumber }}
-      </span>
       <span slot-scope="{ item }" slot="value">
         ${{ item.amount.value }}
       </span>
@@ -58,7 +53,7 @@ export default {
       invoice: null,
       jsonToggleIcon: "&#9650;",
       showJSON: false,
-      columns: ["ID", "status", "value", "subscriptionName"]
+      columns: ["subscriptionId", "date", "value"]
     }
   },
   watch: {
