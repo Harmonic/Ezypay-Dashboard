@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb93b7ad1a38e08fab6677c3d27504ab",
+    "content-hash": "3f48ce618c80d464ec0d25c5a404fbfa",
     "packages": [
         {
             "name": "bensampo/laravel-enum",
@@ -625,16 +625,16 @@
         },
         {
             "name": "harmonic/ezypay",
-            "version": "dev-master",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Harmonic/Ezypay.git",
-                "reference": "961110d7000ab64746b90559ef0a0ffab9718bfc"
+                "reference": "8960089743fc2f8e761777fe0e092654e8387b2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Harmonic/Ezypay/zipball/961110d7000ab64746b90559ef0a0ffab9718bfc",
-                "reference": "961110d7000ab64746b90559ef0a0ffab9718bfc",
+                "url": "https://api.github.com/repos/Harmonic/Ezypay/zipball/8960089743fc2f8e761777fe0e092654e8387b2c",
+                "reference": "8960089743fc2f8e761777fe0e092654e8387b2c",
                 "shasum": ""
             },
             "require": {
@@ -646,7 +646,8 @@
                 "mockery/mockery": "^1.1",
                 "orchestra/testbench": "~3.0",
                 "phpunit/phpunit": "~7.0",
-                "sempro/phpunit-pretty-print": "^1.0"
+                "sempro/phpunit-pretty-print": "^1.0",
+                "vlucas/phpdotenv": "^3.4"
             },
             "type": "library",
             "extra": {
@@ -664,11 +665,7 @@
                     "harmonic\\Ezypay\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "harmonic\\Ezypay\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -683,13 +680,9 @@
             "homepage": "https://github.com/harmonic/ezypay",
             "keywords": [
                 "Ezypay",
-                "Laravel"
+                "laravel"
             ],
-            "support": {
-                "source": "https://github.com/Harmonic/Ezypay/tree/v1.0.6",
-                "issues": "https://github.com/Harmonic/Ezypay/issues"
-            },
-            "time": "2019-07-17T05:03:52+00:00"
+            "time": "2019-08-29T05:02:47+00:00"
         },
         {
             "name": "harmonic/inertia-table",
@@ -5715,7 +5708,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "inertiajs/inertia-laravel": 20,
-        "harmonic/ezypay": 20,
         "harmonic/inertia-table": 20,
         "dyrynda/laravel-make-user": 20
     },

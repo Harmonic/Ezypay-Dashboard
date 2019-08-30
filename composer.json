@@ -28,7 +28,7 @@
         "reinink/remember-query-strings": "^0.1.0",
         "silber/bouncer": "v1.0.0-rc.5",
         "tightenco/ziggy": "^0.7.1",
-        "harmonic/ezypay": "^0.1.9",
+        "harmonic/ezypay": "*",
         "harmonic/inertia-table": "dev-master"
     },
     "require-dev": {
