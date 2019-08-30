@@ -76,7 +76,7 @@ export default {
     return {
       showModal: false,
       customer: null,
-      columns: ["name", "email", "subscription", "futureInvoices"]
+      columns: ["name", "email", "subscription"]
     }
   },
   watch: {
