@@ -11,10 +11,6 @@
     [
         {
             "type": "vcs",
-            "url": "https://github.com/harmonic/Ezypay"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/harmonic/inertia-table"
         },
         {
@@ -32,7 +28,7 @@
         "reinink/remember-query-strings": "^0.1.0",
         "silber/bouncer": "v1.0.0-rc.5",
         "tightenco/ziggy": "^0.7.1",
-        "harmonic/ezypay": "dev-master",
+        "harmonic/ezypay": "^0.1.9",
         "harmonic/inertia-table": "dev-master"
     },
     "require-dev": {
