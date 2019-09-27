@@ -625,16 +625,16 @@
         },
         {
             "name": "harmonic/ezypay",
-            "version": "v1.0.10",
+            "version": "v1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Harmonic/Ezypay.git",
-                "reference": "8960089743fc2f8e761777fe0e092654e8387b2c"
+                "reference": "4727802b6dee37c4872bd55bb889165cd1c35a1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Harmonic/Ezypay/zipball/8960089743fc2f8e761777fe0e092654e8387b2c",
-                "reference": "8960089743fc2f8e761777fe0e092654e8387b2c",
+                "url": "https://api.github.com/repos/Harmonic/Ezypay/zipball/4727802b6dee37c4872bd55bb889165cd1c35a1b",
+                "reference": "4727802b6dee37c4872bd55bb889165cd1c35a1b",
                 "shasum": ""
             },
             "require": {
@@ -682,7 +682,7 @@
                 "Ezypay",
                 "laravel"
             ],
-            "time": "2019-08-29T05:02:47+00:00"
+            "time": "2019-09-11T02:45:00+00:00"
         },
         {
             "name": "harmonic/inertia-table",
